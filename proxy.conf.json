@@ -1,24 +1,24 @@
 {
-  "/companiesdata/sandbox": {
+  "/sandbox": {
     "target": "https://login.bisnode.com",
     "secure": false,
     "changeOrigin": true,
     "logLevel": "debug"
 
   },
-  "/companiesdata/credit-data-companies": {
+  "/credit-data-companies": {
     "target": "https://sandbox-api.bisnode.com",
     "secure": false,
     "changeOrigin": true,
     "logLevel": "debug"
   },
-  "/companiesdata/oauth2": {
+  "/oauth2": {
     "target": "https://sandbox-us-api.experian.com",
     "secure": false,
     "changeOrigin": true,
     "logLevel": "debug"
   },
-  "/companiesdata/businessinformation": {
+  "/businessinformation": {
     "target": "https://sandbox-us-api.experian.com",
     "secure": false,
     "changeOrigin": true,
