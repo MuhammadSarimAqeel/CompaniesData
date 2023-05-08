@@ -22,7 +22,7 @@ export class ApiService {
       'Authorization': 'Basic NDc0MDA4OWUtYWJlNC00YTNmLTg4MGQtMDA1NWUwYTFiODRiOk4xTlpIbFhGQkw1MjhLc0pyMmg5OW5KUmRoQlBkSTJTcGhmbzUzSEd4WTFiWHpjMzFNNmxReUpWSzN6SVBHOVY='
     });
     const body = 'grant_type=client_credentials&scope=credit_data_companies';
-    return this.http.post(this.apiURL, body, { headers: headers });
+    return this.http.post('https://login.bisnode.com/sandbox/v1/token.oauth2', body, { headers: headers });
   }
 
   getCompanyDetails(Obj:Object, token:string){
@@ -30,7 +30,7 @@ export class ApiService {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer '+token
     });
-    return this.http.post("/credit-data-companies/v2/companies", Obj, { headers: headers });
+    return this.http.post("https://sandbox-api.bisnode.com/credit-data-companies/v2/companies", Obj, { headers: headers });
   }
 
   getCompanyDetailsExperian(Obj:ObjectExperian, token:string){
