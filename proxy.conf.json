@@ -1,0 +1,27 @@
+{
+  "/sandbox": {
+    "target": "https://login.bisnode.com",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+
+  },
+  "/credit-data-companies": {
+    "target": "https://sandbox-api.bisnode.com",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/oauth2": {
+    "target": "https://sandbox-us-api.experian.com",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/businessinformation": {
+    "target": "https://sandbox-us-api.experian.com",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

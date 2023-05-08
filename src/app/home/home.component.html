@@ -1,0 +1,76 @@
+  <!-- Page content-->
+  <div class="text-center my-4"><a routerLink="/experian-home">Experian Company Search</a></div>
+  <h4 class="text-center mt-4">Company Information</h4>
+  <p class="text-center">You can review and update your company & business Information</p>
+    
+ 
+      <div class="container form-container">
+         
+       
+              <form (ngSubmit)="onsubmit()">
+                  <div class="d-flex">
+                  <label for="companyName" class="text-nowrap">Company Legal Name:</label>
+                  <input type="text" id="companyName" name="companyName" [(ngModel)]="obj.name" placeholder="Company Name" >
+              </div>
+              <div class="d-flex">
+                  <label for="address">Address:</label>
+                  <textarea id="address" name="address" [(ngModel)]="address" placeholder="Business Address"></textarea>
+              </div>
+          
+              <div class="d-flex">
+                <label for="country" class="text-nowrap">Country:</label>
+                <input type="text" id="country" name="country" [(ngModel)]="obj.country" placeholder="Country" >
+            </div>
+              <div class="d-flex">
+                  <label for="telephone" class="text-nowrap">Telephone number(s):</label>
+                  <input type="tel" id="telephone" name="telephone" placeholder="Company Phone">
+              </div>
+         
+              <div class="d-flex">
+                  <label for="orgType" class="text-nowrap">Type of organization:</label>
+                  <select id="orgType" name="orgType">
+                  <option value="corporation">Corporation</option>
+                  <option value="partnership">Partnership</option>
+                  <option value="soleProprietorship">Sole Proprietorship</option>
+                  <option value="limitedLiabilityCompany">Limited Liability Company</option>
+                  <option value="nonProfit">Non-Profit</option>
+                  </select>
+              </div>
+       
+              <div class="d-flex ">
+                  <label for="ein">EIN:</label>
+                  <input type="text" id="ein" name="ein" placeholder="EIN Number">
+              </div>
+         
+              <div class="d-flex">   
+                  <label for="divisions">Division, subsidiaries or affiliates covered under the plan:</label><br>
+                  <textarea id="divisions" name="divisions" placeholder="Plan Details"></textarea><br>
+              </div> 
+              <div class="text-center">
+                  <input type="submit" value="Search" >
+              </div>
+                  </form>
+                  <div *ngIf="showMessage" style="color:red" class="text-center p-3 pb-3">The address you entered doesn't match</div> 
+
+      </div>
+             
+    <div id="search" *ngIf="searched"> 
+    
+     <h4 class="pl-4 search-para">
+    
+        Company Search Results:
+     </h4>
+    
+      <div class="container-search">
+       
+          <div class="item item-border-top"  >{{data.companies[0].name}} <br>{{data.companies[0].address.street}} {{data.companies[0].address.town}} {{data.companies[0].address.postalCode}}</div>
+          <div class="item item-border-top">Single <br> Location</div>
+          <div class="item item-border-top">Active</div>
+          <div class="item item-border-top"><a href="#">{{data.companies[0].dunsNumber}} <i class="icon-right-circled-2"></i></a>
+               <br>  
+          </div>
+
+     
+  </div>
+
+</div> 

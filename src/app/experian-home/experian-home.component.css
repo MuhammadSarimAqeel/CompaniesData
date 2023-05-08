@@ -1,0 +1,103 @@
+body {
+    background-color: #f0f0f0; /* set light background color */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+form {
+    background-color: #fff;
+    padding: 45px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 700px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    width: 40%;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid black;
+
+}
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus,
+input[type=text]:focus {
+  outline: 2px solid green;
+  border-radius: 2px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+.container-search {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 130px);
+    
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.item {
+    background-color: #fff;
+    border-bottom: 2px solid #ccc;
+    padding: 25px;
+    font-size: 15px;
+    text-align: left;
+}
+.item-border-top {
+    border-top: 2px solid #ccc;
+}
+
+
+.form-container {
+    margin-top: -3.7rem;
+}
+.search-para {
+       margin-top: -3rem;
+       padding-left: 2rem;
+       padding-right: 2rem;
+}
+
+a:hover{
+    text-decoration: none;
+}
