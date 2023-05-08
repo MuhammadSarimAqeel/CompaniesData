@@ -22,7 +22,7 @@ export class ApiService {
       'Authorization': 'Basic NDc0MDA4OWUtYWJlNC00YTNmLTg4MGQtMDA1NWUwYTFiODRiOk4xTlpIbFhGQkw1MjhLc0pyMmg5OW5KUmRoQlBkSTJTcGhmbzUzSEd4WTFiWHpjMzFNNmxReUpWSzN6SVBHOVY='
     });
     const body = 'grant_type=client_credentials&scope=credit_data_companies';
-    return this.http.get('https://reqres.in/api/users?page=2');
+    return this.http.post(this.apiURL, body, { headers: headers });
   }
 
   getCompanyDetails(Obj:Object, token:string){
