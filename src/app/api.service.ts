@@ -10,7 +10,7 @@ import { ObjectExperian } from './classes/obj-experian';
 })
 export class ApiService {
   body!:ExperianPayload
-  private apiURL = '/sandbox/v1/token.oauth2';
+  private apiURL = '/companiesdata/sandbox/v1/token.oauth2';
   private clientID = '4740089e-abe4-4a3f-880d-0055e0a1b84b';
   private clientSecret = '4740089e-abe4-4a3f-880d-0055e0a1b84b';
  
@@ -22,7 +22,7 @@ export class ApiService {
       'Authorization': 'Basic NDc0MDA4OWUtYWJlNC00YTNmLTg4MGQtMDA1NWUwYTFiODRiOk4xTlpIbFhGQkw1MjhLc0pyMmg5OW5KUmRoQlBkSTJTcGhmbzUzSEd4WTFiWHpjMzFNNmxReUpWSzN6SVBHOVY='
     });
     const body = 'grant_type=client_credentials&scope=credit_data_companies';
-    return this.http.post('https://login.bisnode.com/sandbox/v1/token.oauth2', body, { headers: headers });
+    return this.http.post(this.apiURL, body, { headers: headers });
   }
 
   getCompanyDetails(Obj:Object, token:string){
@@ -30,7 +30,7 @@ export class ApiService {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer '+token
     });
-    return this.http.post("https://sandbox-api.bisnode.com/credit-data-companies/v2/companies", Obj, { headers: headers });
+    return this.http.post("/companiesdata/credit-data-companies/v2/companies", Obj, { headers: headers });
   }
 
   getCompanyDetailsExperian(Obj:ObjectExperian, token:string){
@@ -38,13 +38,13 @@ export class ApiService {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer '+token
     });
-    return this.http.post("/businessinformation/businesses/v1/search", Obj, { headers: headers });
+    return this.http.post("/companiesdata/businessinformation/businesses/v1/search", Obj, { headers: headers });
   }
 
   getAuthenticationTokenExperian(body:ExperianPayload): Observable<any> {
  
 
-    return this.http.post('/oauth2/v1/token',body);
+    return this.http.post('/companiesdata/oauth2/v1/token',body);
   }
 
   
